@@ -146,9 +146,9 @@ resource "aws_eip" "one" {
 resource "aws_instance" "project1-web-server" {
   ami                  = "ami-0b5eea76982371e91"
   instance_type        = "t2.micro"
-  availability_zone    = "us-east-1a"      #need same with subnet Azone. Need to specify to make sure amazon will not pick random Azone
-  key_name             = "Pokemon_keypair" #create manually and download it to your local machine
-  iam_instance_profile = "Ambulah_S3_Access"
+  availability_zone    = "us-east-1a"        #need same with subnet Azone. Need to specify to make sure amazon will not pick random Azone
+  key_name             = "Pokemon_keypair"   #create manually and download it to your local machine
+  iam_instance_profile = "Ambulah_S3_Access" #Create Role manually
   user_data            = file("install.sh")
 
 
